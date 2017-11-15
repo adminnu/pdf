@@ -1,5 +1,5 @@
 {
-	"name": "marco/pdf",
+	"name": "gears/pdf",
 	"description": "A PDF builder using HTML or DOCX templates.",
 	"homepage": "https://github.com/phpgearbox/pdf",
 	"keywords": ["pdf", "docx", "template", "builder", "converter"],
@@ -8,7 +8,7 @@
 	{
 		"psr-4":
 		{
-			"marco\\": "src"
+			"gears\\": "src"
 		}
 	},
 	"require":
