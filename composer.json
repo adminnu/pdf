@@ -1,5 +1,5 @@
 {
-	"name": "ETSGlobal/pdf",
+	"name": "marco-mdl/pdf",
 	"description": "A PDF builder using HTML or DOCX templates.",
 	"homepage": "https://github.com/phpgearbox/pdf",
 	"keywords": ["pdf", "docx", "template", "builder", "converter"],
@@ -15,8 +15,8 @@
 	{
 		"php": "^7.0",
 		"gears/di": "*",
-		"symfony/process": "2.*|3.*",
-		"symfony/filesystem": "2.*|3.*",
+		"symfony/process": "3.*",
+		"symfony/filesystem": "3.*",
 		"jakoch/phantomjs-installer": "1.9.8"
 	},
 	"require-dev":
@@ -25,16 +25,11 @@
 		"phpunit/phpunit": "^4.8|^5.6",
 		"guzzlehttp/guzzle": "4.*",
 		"sgh/pdfbox": "dev-master",
-		"google/apiclient": "1.*",
 		"symfony/finder": "2.*|3.*"
 	},
 	"scripts":
 	{
 		"post-install-cmd": ["PhantomInstaller\\Installer::installPhantomJS"],
 		"post-update-cmd": ["PhantomInstaller\\Installer::installPhantomJS"]
-	},
-	"suggest":
-	{
-		"google/apiclient": "Install to support the Google Docx Converter."
 	}
 }
