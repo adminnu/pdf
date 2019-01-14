@@ -16,7 +16,7 @@
 		"php": "^7.0",
 		"gears/di": "*",
 		"symfony/process": "4.*",
-		"symfony/filesystem": "3.*"
+		"symfony/filesystem": "4.*"
 	},
 	"require-dev":
 	{
