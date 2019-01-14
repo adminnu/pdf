@@ -1,13 +1,13 @@
 <?php namespace Gears\Pdf\Docx;
 ////////////////////////////////////////////////////////////////////////////////
-// __________ __             ________                   __________              
+// __________ __             ________                   __________
 // \______   \  |__ ______  /  _____/  ____ _____ ______\______   \ _______  ___
 //  |     ___/  |  \\____ \/   \  ____/ __ \\__  \\_  __ \    |  _//  _ \  \/  /
-//  |    |   |   Y  \  |_> >    \_\  \  ___/ / __ \|  | \/    |   (  <_> >    < 
+//  |    |   |   Y  \  |_> >    \_\  \  ___/ / __ \|  | \/    |   (  <_> >    <
 //  |____|   |___|  /   __/ \______  /\___  >____  /__|  |______  /\____/__/\_ \
 //                \/|__|           \/     \/     \/             \/            \/
 // -----------------------------------------------------------------------------
-//          Designed and Developed by Brad Jones <brad @="bjc.id.au" />         
+//          Designed and Developed by Brad Jones <brad @="bjc.id.au" />
 // -----------------------------------------------------------------------------
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -20,7 +20,7 @@ class SimpleXMLElement extends NativeSimpleXMLElement
 	 * =========================================================================
 	 * If part of the tag is formatted differently we won't get a match.
 	 * Best explained with an example:
-	 * 
+	 *
 	 * ```xml
 	 * <w:r>
 	 * 	<w:rPr/>
@@ -34,9 +34,9 @@ class SimpleXMLElement extends NativeSimpleXMLElement
 	 * 	<w:t>1}</w:t>
 	 * </w:r>
 	 * ```
-	 * 
+	 *
 	 * The above becomes, after running through this method:
-	 * 
+	 *
 	 * ```xml
 	 * <w:r>
 	 * 	<w:rPr/>
@@ -46,13 +46,24 @@ class SimpleXMLElement extends NativeSimpleXMLElement
 	 * Parameters:
 	 * -------------------------------------------------------------------------
 	 *  - $xml: A well-formed XML string.
-	 * 
+	 *
 	 * Returns:
 	 * -------------------------------------------------------------------------
 	 * string
 	 */
 	public static function fixSplitTags($xml)
 	{
+        libxml_use_internal_errors(true);
+
+        $doc = new \DOMDocument();
+        $doc->loadXML($xml);
+
+        $errors = libxml_get_errors();
+        libxml_clear_errors();
+
+        $validBefore = $errors;
+
+
 		preg_match_all('|\$\{([^\}]+)\}|U', $xml, $matches);
 
 		foreach ($matches[0] as $value)

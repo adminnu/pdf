@@ -1,6 +1,6 @@
 {
 	"name": "gears/pdf",
-	"description": "A PDF builder using HTML or DOCX templates.",
+	"description": "A PDF builder using DOCX templates.",
 	"homepage": "https://github.com/phpgearbox/pdf",
 	"keywords": ["pdf", "docx", "template", "builder", "converter"],
 	"license": "MIT",
@@ -26,10 +26,5 @@
 		"guzzlehttp/guzzle": "4.*",
 		"sgh/pdfbox": "dev-master",
 		"symfony/finder": "2.*|3.*"
-	},
-	"scripts":
-	{
-		"post-install-cmd": ["PhantomInstaller\\Installer::installPhantomJS"],
-		"post-update-cmd": ["PhantomInstaller\\Installer::installPhantomJS"]
 	}
 }
