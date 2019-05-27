@@ -1,7 +1,7 @@
 {
-	"name": "marco/pdf",
+	"name": "adminnu/pdf",
 	"description": "A PDF builder using DOCX templates.",
-	"homepage": "https://github.com/phpgearbox/pdf",
+	"homepage": "https://github.com/adminnu/pdf",
 	"keywords": ["pdf", "docx", "template", "builder", "converter"],
 	"license": "MIT",
 	"autoload":
