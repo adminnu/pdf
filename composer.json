@@ -8,7 +8,7 @@
 	{
 		"psr-4":
 		{
-			"gears\\": "src"
+			"Gears\\": "src/"
 		}
 	},
 	"require":
